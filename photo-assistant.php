@@ -12,6 +12,7 @@ License: GPL
 Copyright: Keanan Koppenhaver
 */
 
+define('PA_PATH', plugin_dir_path(__FILE__));
 define('PA_ADMIN_URL', plugins_url('admin/', __FILE__));  
 
 
@@ -26,10 +27,31 @@ function pa_plugin_init(){
 	
 	include_once('admin/admin.php');	
 
-	wp_enqueue_style( 'admin-css', PA_ADMIN_URL. 'css/admin.css');
 }  
 
 add_action( 'admin_init', 'pa_plugin_init' );
+
+/**
+* pa_media_popup_content
+* Add pop up content to edit, new and post pages
+*
+* @since 1.0
+*/
+
+add_action( 'admin_head-post.php',  'pa_media_popup_content' );
+add_action( 'admin_head-post-new.php',  'pa_media_popup_content' );
+add_action( 'admin_head-edit.php',  'pa_media_popup_content' );
+
+function pa_media_popup_content() {
+   wp_enqueue_style( 'admin-css', PA_ADMIN_URL. 'css/admin.css');
+   wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
+   ?>
+
+   <div id="pa-photos-modal" style="display:none;">
+     <?php include( PA_PATH . 'admin/includes/pa-photos.php');	?> 
+   </div>
+<?php
+}
 
 
 ?>
