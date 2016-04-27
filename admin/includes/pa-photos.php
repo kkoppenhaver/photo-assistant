@@ -1,6 +1,13 @@
+<?php global $post; ?>
+
 <div class="popup-inner">
 	<div class="spinner"></div>
-	<div class="keywords"><p>Keyword: <em>books</em></p></div>
+	<div class="keywords">
+		<?php 
+			$keyword = get_post_keyword($post->post_content); 
+		?>
+		<p>Keyword: <em><?php var_dump( $keyword ); ?></em></p>
+	</div>
 	<div class="images">
 		
 	</div>
@@ -10,7 +17,7 @@
 	var API_BASE = 'https://api.gettyimages.com/v3/';
 
 	jQuery(document).ready(function(){
-		var search_term = 'books';
+		var search_term = '<?php echo $keyword ?>';
 
 		var search_url = API_BASE + 'search/images?phrase=' + search_term;
 
