@@ -9,14 +9,8 @@
 		?>
 		<ul>
 			<?php foreach( $keywords as $key => $value ): ?>
-				<li>
-					<?php if($key == 0){
-						echo '<strong>';
-					} ?>
+				<li class="search-term">
 					<em><?php echo $value[0] ?></em>
-					<?php if($key == 0){
-						echo '</strong>';
-					} ?>
 				</li>
 			<?php endforeach; ?>
 		</ul>
@@ -29,15 +23,7 @@
 <script>
 	var API_BASE = 'https://api.gettyimages.com/v3/';
 
-	jQuery(document).ready(function(){
-		var search_term = '<?php echo $keyword ?>';
-
-		var search_url = API_BASE + 'search/images?phrase=' + search_term;
-
-		jQuery.ajaxSetup({
-    		"headers" : { "Api-Key": "2qymv3fyem9rz5uff9724vtz" }
-		});
-
+	function gettyAjax(search_url){
 		jQuery.ajax({
 			url: search_url, 
 			success: function(response){
@@ -51,5 +37,36 @@
         		});
     		}
     	});
+	}
+
+	jQuery(document).ready(function(){
+		var search_term = '<?php echo $keywords[0][0] ?>';
+
+		var search_url = API_BASE + 'search/images?phrase=' + search_term;
+
+		console.log(search_url);
+
+		jQuery.ajaxSetup({
+    		"headers" : { "Api-Key": "2qymv3fyem9rz5uff9724vtz" }
+		});
+
+		gettyAjax(search_url);
+
+		jQuery('.keywords li').first().addClass('active');
+
+		jQuery('.search-term').click(function(){
+			var term = jQuery(this).text().replace(/ /g,'');
+			
+			//Clear the photos currently in place
+
+			//Set up the new URL
+
+			//Run the Ajax Request
+
+			//Bold the new active term
+			jQuery('.keywords li').removeClass('active');
+
+			jQuery(this).addClass('active');
+		});
     });
 </script>

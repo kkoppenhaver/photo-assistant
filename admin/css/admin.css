@@ -25,5 +25,10 @@
 }
 
 .keywords li {
+	cursor: pointer;
 	margin: 10px;
+}
+
+.keywords li.active {
+	font-weight: 700;
 }
