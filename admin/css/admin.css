@@ -1,3 +1,21 @@
 .photo-assistant > .dashicons {
 	padding-top: 2px !important;
 }
+
+.popup-inner > .images {
+	padding-bottom: 50px;
+}
+
+.popup-inner > .images > img {
+	margin: 10px;
+	width: 21%;
+}
+
+#TB_ajaxContent {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+#TB_window {
+	overflow: hidden;
+}
