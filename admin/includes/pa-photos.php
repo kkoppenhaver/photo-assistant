@@ -30,8 +30,7 @@
 	var API_BASE = 'https://api.gettyimages.com/v3/';
 
 	jQuery(document).ready(function(){
-		//var search_term = '<?php echo $keyword ?>';
-		var search_term = 'tesla model';
+		var search_term = '<?php echo $keyword ?>';
 
 		var search_url = API_BASE + 'search/images?phrase=' + search_term;
 
