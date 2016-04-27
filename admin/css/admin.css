@@ -19,3 +19,11 @@
 #TB_window {
 	overflow: hidden;
 }
+
+.keywords ul, .keywords p, .keywords li {
+	display: inline-block;
+}
+
+.keywords li {
+	margin: 10px;
+}

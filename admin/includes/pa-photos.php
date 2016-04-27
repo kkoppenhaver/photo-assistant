@@ -3,10 +3,23 @@
 <div class="popup-inner">
 	<div class="spinner"></div>
 	<div class="keywords">
+		<p>Keywords:</p>
 		<?php 
-			$keyword = get_post_keyword($post->post_content); 
+			$keywords = get_post_keywords($post->post_content); 
 		?>
-		<p>Keyword: <em><?php var_dump( $keyword ); ?></em></p>
+		<ul>
+			<?php foreach( $keywords as $key => $value ): ?>
+				<li>
+					<?php if($key == 0){
+						echo '<strong>';
+					} ?>
+					<em><?php echo $value[0] ?></em>
+					<?php if($key == 0){
+						echo '</strong>';
+					} ?>
+				</li>
+			<?php endforeach; ?>
+		</ul>
 	</div>
 	<div class="images">
 		
@@ -17,7 +30,8 @@
 	var API_BASE = 'https://api.gettyimages.com/v3/';
 
 	jQuery(document).ready(function(){
-		var search_term = '<?php echo $keyword ?>';
+		//var search_term = '<?php echo $keyword ?>';
+		var search_term = 'tesla model';
 
 		var search_url = API_BASE + 'search/images?phrase=' + search_term;
 

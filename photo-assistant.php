@@ -54,7 +54,7 @@ function pa_media_popup_content() {
 <?php
 }
 
-function get_post_keyword($post_content) {
+function get_post_keywords($post_content) {
   
   //Strip out any HTML
   $post_content = strip_tags($post_content);
@@ -93,8 +93,8 @@ function get_post_keyword($post_content) {
   //Sort the array by a keyword's value
   usort($words_sorted, 'word_value_sort');
 
-  //Return the best keyword
-  return $words_sorted;
+  //Return the best 5 keywords
+  return array_slice($words_sorted, 0, 5);
   
 }
 
