@@ -47,8 +47,6 @@
 
 		var search_url = API_BASE + 'search/images?phrase=' + search_term;
 
-		console.log(search_url);
-
 		jQuery.ajaxSetup({
     		"headers" : { "Api-Key": "2qymv3fyem9rz5uff9724vtz" }
 		});
