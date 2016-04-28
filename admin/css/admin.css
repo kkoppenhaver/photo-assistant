@@ -11,6 +11,14 @@
 	width: 21%;
 }
 
+.popup-inner > .images > .spinner {
+	position: absolute;
+    z-index: 20000;
+    left: 50%;
+    margin-left: -10px;
+    visibility: visible;
+}
+
 #TB_ajaxContent {
 	width: 100% !important;
 	height: 100% !important;

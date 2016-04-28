@@ -1,7 +1,6 @@
 <?php global $post; ?>
 
 <div class="popup-inner">
-	<div class="spinner"></div>
 	<div class="keywords">
 		<p>Keywords:</p>
 		<?php 
@@ -16,7 +15,7 @@
 		</ul>
 	</div>
 	<div class="images">
-		
+		<div class="spinner"></div>
 	</div>
 </div>
 
@@ -24,6 +23,8 @@
 	var API_BASE = 'https://api.gettyimages.com/v3/';
 
 	function gettyAjax(search_url){
+		jQuery('.images > .spinner').css('display', 'block');
+
 		jQuery.ajax({
 			url: search_url, 
 			success: function(response){
@@ -35,6 +36,8 @@
         				})
         			);
         		});
+
+        		jQuery('.images > .spinner').css('display', 'none');
     		}
     	});
 	}
@@ -58,10 +61,13 @@
 			var term = jQuery(this).text().replace(/ /g,'');
 			
 			//Clear the photos currently in place
+			jQuery('.popup-inner > .images > img').remove()
 
 			//Set up the new URL
+			var search_url = API_BASE + 'search/images?phrase=' + term;
 
 			//Run the Ajax Request
+			gettyAjax(search_url);
 
 			//Bold the new active term
 			jQuery('.keywords li').removeClass('active');
