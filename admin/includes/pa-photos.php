@@ -3,11 +3,11 @@
 <div class="popup-inner">
 	<div class="keywords">
 		<p>Keywords:</p>
-		<?php 
-			$keywords = get_post_keywords($post->post_content); 
+		<?php
+			$keywords = get_post_keywords( $post->post_content );
 		?>
 		<ul>
-			<?php foreach( $keywords as $key => $value ): ?>
+			<?php foreach ( $keywords as $key => $value ) : ?>
 				<li class="search-term">
 					<em><?php echo $value[0] ?></em>
 				</li>
@@ -28,18 +28,18 @@
 		jQuery.ajax({
 			url: search_url, 
 			success: function(response){
-        		response.images.forEach(function(el, index, array){
-        			jQuery('.popup-inner > .images').append(
-        				jQuery('<img>', {
-        					id:  el.id,
-        					src: el.display_sizes[0].uri
-        				})
-        			);
-        		});
+				response.images.forEach(function(el, index, array){
+					jQuery('.popup-inner > .images').append(
+						jQuery('<img>', {
+							id:  el.id,
+							src: el.display_sizes[0].uri
+						})
+					);
+				});
 
-        		jQuery('.images > .spinner').css('display', 'none');
-    		}
-    	});
+				jQuery('.images > .spinner').css('display', 'none');
+			}
+		});
 	}
 
 	jQuery(document).ready(function(){
@@ -48,7 +48,7 @@
 		var search_url = API_BASE + 'search/images?phrase=' + search_term;
 
 		jQuery.ajaxSetup({
-    		"headers" : { "Api-Key": "2qymv3fyem9rz5uff9724vtz" }
+			"headers" : { "Api-Key": "2qymv3fyem9rz5uff9724vtz" }
 		});
 
 		gettyAjax(search_url);
@@ -72,5 +72,5 @@
 
 			jQuery(this).addClass('active');
 		});
-    });
+	});
 </script>
