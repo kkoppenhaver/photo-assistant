@@ -12,7 +12,22 @@
 		});
 
 		$('#embed-into-post').click(function(){
-			alert('embed into post');
+			// Get the first instance of TinyMCE
+			ed = tinyMCE.get()[0];
+
+			var range = ed.selection.getRng();   
+
+			var newNode = ed.getDoc().createElement ( 'img' );
+
+			if( $('.popup-inner > .images > img.selected').attr('src') ) {
+				newNode.src= $('.popup-inner > .images > img.selected').attr('src');
+				range.insertNode(newNode);
+				self.parent.tb_remove();
+			}
+			else {
+				alert( 'No image selected!' );
+			}
+
 		});
 
 	});
