@@ -43,6 +43,7 @@ function pa_media_popup_content() {
 	wp_enqueue_style( 'admin-css', PA_ADMIN_URL.'css/admin.css' );
 	wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' );
 	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'pa-js', PA_ADMIN_URL.'js/admin.js', array( 'jquery' ) );
 ?>
 
 	<div id="pa-photos-modal" style="display:none;">

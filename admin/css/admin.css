@@ -11,6 +11,11 @@
 	width: 21%;
 }
 
+.popup-inner > .images > img.selected {
+	border: 5px solid #0073aa;
+	box-sizing: border-box;
+}
+
 .popup-inner > .images > .spinner {
 	position: absolute;
     z-index: 20000;
