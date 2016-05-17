@@ -33,6 +33,10 @@
 	overflow: hidden;
 }
 
+.keywords {
+	padding-top: 40px;
+}
+
 .keywords ul, .keywords p, .keywords li {
 	display: inline-block;
 }
@@ -44,6 +48,15 @@
 
 .keywords li.active {
 	font-weight: 700;
+}
+
+.add-buttons {
+	background-color: #fff;
+	margin-top: -5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	position: fixed;
+	width: 100%;
 }
 
 #add-featured-image, #embed-into-post { 
