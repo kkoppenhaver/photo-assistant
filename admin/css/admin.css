@@ -45,3 +45,9 @@
 .keywords li.active {
 	font-weight: 700;
 }
+
+#add-featured-image, #embed-into-post { 
+	margin: 10px 10px 0px 0px;
+	max-width: 150px;
+	text-align: center;
+}

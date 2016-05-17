@@ -1,6 +1,10 @@
 <?php global $post; ?>
 
 <div class="popup-inner">
+	<div class="add-buttons">
+		<input name="add-featured-image" type="submit" class="button button-primary button-large" id="add-featured-image" value="Add Featured Image" style="display: inline-block;">
+		<input name="embed-into-post" type="submit" class="button button-primary button-large" id="embed-into-post" value="Embed Into Post" style="display: inline-block;">
+	</div>
 	<div class="keywords">
 		<p>Keywords:</p>
 		<?php
