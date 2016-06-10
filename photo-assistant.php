@@ -37,13 +37,13 @@ class photo_assistant_Plugin {
 	 * as well as an AJAX hook to retrieve templates.
 	 */
 	public function __construct() {
-		add_action( 'admin_enqueue_scripts', $this->marshal( 'add_scripts' ) );
-		add_action( 'media_buttons_context', $this->marshal( 'add_pa_button') );
+		add_action( 'admin_enqueue_scripts', $this->marshall( 'add_scripts' ) );
+		add_action( 'media_buttons_context', $this->marshall( 'add_pa_button') );
 		// Adding the templates to the post.php and post-new.php only as that's the only place
 		// our meta box is added in this plugin.  You can also use the wp-footer action if you need
 		// the templates globally.
-		add_action( 'admin_footer-post-new.php', $this->marshal( 'add_templates' ) );
-		add_action( 'admin_footer-post.php', $this->marshal( 'add_templates' ) );
+		add_action( 'admin_footer-post-new.php', $this->marshall( 'add_templates' ) );
+		add_action( 'admin_footer-post.php', $this->marshall( 'add_templates' ) );
 
 	}
 
@@ -115,7 +115,7 @@ class photo_assistant_Plugin {
 	 * @return callable An array-wrapped PHP callable suitable for calling class methods when working with
 	 * WordPress add_action/add_filter.
 	 */
-	public function marshal( $method_name ) {
+	public function marshall( $method_name ) {
 		return array( &$this, $method_name );
 	}
 }
