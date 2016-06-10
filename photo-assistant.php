@@ -14,19 +14,19 @@
 /**
  * Main plugin class, namespace [Author Handle]_[Plugin Text Domain]_ to avoid conflicts.
  */
-class aut0poietic_backbone_modal_Plugin {
+class photo_assistant_Plugin {
 
 	/**
 	 * Static Singleton
 	 * @action plugins_loaded
-	 * @return aut0poietic_backbone_modal_Plugin
+	 * @return photo_assistant_Plugin
 	 * @static
 	 */
 	public static function init() {
 		static $instance = false;
 		if ( ! $instance ) {
 			load_plugin_textdomain( 'backbone_modal', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-			$instance = new aut0poietic_backbone_modal_Plugin;
+			$instance = new photo_assistant_Plugin;
 		}
 
 		return $instance;
@@ -139,4 +139,4 @@ class aut0poietic_backbone_modal_Plugin {
 /**
  * Instantiates the plugin singleton during plugins_loaded action.
  */
-add_action( 'plugins_loaded', array( 'aut0poietic_backbone_modal_Plugin', 'init' ) );
+add_action( 'plugins_loaded', array( 'photo_assistant_Plugin', 'init' ) );
