@@ -18,8 +18,8 @@
 <script type="text/html" id='tmpl-aut0poietic-modal-window'>
 	<div class="backbone_modal">
 		<a class="backbone_modal-close dashicons dashicons-no" href="#"
-		   title="<?php echo __( 'Close', 'backbone_modal' ); ?>"><span
-				class="screen-reader-text"><?php echo __( 'Close', 'backbone_modal' ); ?></span></a>
+		   title="<?php echo __( 'Close', 'photo_assistant' ); ?>"><span
+				class="screen-reader-text"><?php echo __( 'Close', 'photo_assistant' ); ?></span></a>
 
 		<div class="backbone_modal-content">
 			<div class="navigation-bar">
@@ -28,14 +28,14 @@
 				</nav>
 			</div>
 			<section class="backbone_modal-main" role="main">
-				<header><h1><?php echo __( 'Backbone Modal', 'backbone_modal' ); ?></h1></header>
+				<header><h1><?php echo __( 'Backbone Modal', 'photo_assistant' ); ?></h1></header>
 				<article></article>
 				<footer>
 					<div class="inner text-right">
 						<button id="btn-cancel"
-						        class="button button-large"><?php echo __( 'Cancel', 'backbone_modal' ); ?></button>
+						        class="button button-large"><?php echo __( 'Cancel', 'photo_assistant' ); ?></button>
 						<button id="btn-ok"
-						        class="button button-primary button-large"><?php echo __( 'Save &amp; Continue', 'backbone_modal' ); ?></button>
+						        class="button button-primary button-large"><?php echo __( 'Save &amp; Continue', 'photo_assistant' ); ?></button>
 					</div>
 				</footer>
 			</section>

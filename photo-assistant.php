@@ -25,7 +25,7 @@ class photo_assistant_Plugin {
 	public static function init() {
 		static $instance = false;
 		if ( ! $instance ) {
-			load_plugin_textdomain( 'backbone_modal', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+			load_plugin_textdomain( 'photo_assistant', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 			$instance = new photo_assistant_Plugin;
 		}
 
@@ -62,8 +62,8 @@ class photo_assistant_Plugin {
 	 */
 	public function add_meta_box() {
 		add_meta_box(
-			'backbone_modal',
-			__( 'Backbone Modal Sample', 'backbone_modal' ),
+			'photo_assistant',
+			__( 'Backbone Modal Sample', 'photo_assistant' ),
 			$this->marshal( 'metabox_content' ),
 			'post',
 			'side',
@@ -80,7 +80,7 @@ class photo_assistant_Plugin {
 	public function metabox_content( $post ) {
 		print sprintf(
 			'<input type="button" class="button button-primary " id="open-backbone_modal" value="%1$s">',
-			__( 'Open Backbone Modal', 'backbone_modal' )
+			__( 'Open Backbone Modal', 'photo_assistant' )
 		);
 	}
 
@@ -99,17 +99,17 @@ class photo_assistant_Plugin {
 	public function add_scripts( $hook ) {
 		if ( $hook === 'post.php' || $hook === 'post-new.php' ) {
 			$base = plugin_dir_url( __FILE__ );
-			wp_enqueue_script( 'backbone_modal', $base . 'js/modal.js', array(
+			wp_enqueue_script( 'photo_assistant', $base . 'js/modal.js', array(
 				'jquery',
 				'backbone',
 				'underscore',
 				'wp-util'
 			) );
-			wp_localize_script( 'backbone_modal', 'aut0poietic_backbone_modal_l10n',
+			wp_localize_script( 'photo_assistant', 'aut0poietic_backbone_modal_l10n',
 				array(
-					'replace_message' => __( 'This is dummy content. You should add something here.', 'backbone_modal' )
+					'replace_message' => __( 'This is dummy content. You should add something here.', 'photo_assistant' )
 				) );
-			wp_enqueue_style( 'backbone_modal', $base . 'css/modal.css' );
+			wp_enqueue_style( 'photo_assistant', $base . 'css/modal.css' );
 		}
 	}
 
