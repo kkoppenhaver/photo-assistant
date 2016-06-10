@@ -5,7 +5,7 @@
   Description: A WordPress plugin that helps you pick the right stock photo based on the content of your post
   Author: Keanan Koppenhaver
   Twitter: @kkoppenhaver
-  Author URI: http://keanankoppenhaver.com
+  Author URI: http://levelupwp.net
   Version: 0.1
   License: GPL
   Copyright: Keanan Koppenhaver
