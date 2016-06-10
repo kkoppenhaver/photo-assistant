@@ -2,14 +2,14 @@
  * Backbone Application File
  * @internal Obviously, I've dumped all the code into one file. This should probably be broken out into multiple
  * files and then concatenated and minified but as it's an example, it's all one lumpy file.
- * @package aut0poietic.backbone_modal
+ * @package photo_assistant.modal
  */
 
 /**
  * @type {Object} JavaScript namespace for our application.
  */
-var aut0poietic = {
-	backbone_modal: {
+var photo_assistant = {
+	modal: {
 		__instance: undefined
 	}
 };
@@ -17,7 +17,7 @@ var aut0poietic = {
 /**
  * Primary Modal Application Class
  */
-aut0poietic.backbone_modal.Application = Backbone.View.extend(
+photo_assistant.modal.Application = Backbone.View.extend(
 	{
 		id: "backbone_modal_dialog",
 		events: {
@@ -129,7 +129,7 @@ aut0poietic.backbone_modal.Application = Backbone.View.extend(
 			jQuery( document ).off( "focusin" );
 			jQuery( "body" ).css( {"overflow": "auto"} );
 			this.remove();
-			aut0poietic.backbone_modal.__instance = undefined;
+			photo_assistant.modal.__instance = undefined;
 		},
 
 		/**
@@ -159,10 +159,10 @@ jQuery( function ( $ ) {
 	/**
 	 * Attach a click event to the meta-box button that instantiates the Application object, if it's not already open.
 	 */
-	$( "#open-backbone_modal" ).click( function ( e ) {
+	$( "#open-photo_assistant_modal" ).click( function ( e ) {
 		e.preventDefault();
-		if ( aut0poietic.backbone_modal.__instance === undefined ) {
-			aut0poietic.backbone_modal.__instance = new aut0poietic.backbone_modal.Application();
+		if ( photo_assistant.modal.__instance === undefined ) {
+			photo_assistant.modal.__instance = new photo_assistant.modal.Application();
 		}
 	} );
 } );
