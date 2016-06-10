@@ -175,11 +175,35 @@ class photo_assistant_Plugin {
 	 * Creating Plugin Settings Page and field for API Key
 	 */
 	function photo_assistant_settings_page(){
-
+		?>
+	    <div class="wrap">
+	    <h1>Photo Assistant Settings</h1>
+	    <form method="post" action="options.php">
+	        <?php
+	            settings_fields("section");
+	            do_settings_sections("photo-assistant-options");      
+	            submit_button(); 
+	        ?>          
+	    </form>
+		</div>
+	<?php
 	}
 
 	function add_photo_assistant_menu_item() {
-		add_submenu_page("options-general.php", "Photo Assistant", "Photo Assistant", "manage_options", "photo-assistant", array( "photo_assistant_Plugin", "photo_assistant_settings_page" ) );
+		add_submenu_page('options-general.php', 'Photo Assistant', 'Photo Assistant', 'manage_options', 'photo-assistant', array( 'photo_assistant_Plugin', 'photo_assistant_settings_page' ) );
+	}
+
+	function display_apikey_element() {
+		?>
+	   	<input type="text" name="api_key" id="api_key" value="<?php echo get_option('api_key'); ?>" />
+	  <?php
+	}
+
+	function display_photo_assistant_fields() {
+		add_settings_section('section', 'API Settings', null, 'photo-assistant-options');
+
+		add_settings_field('api_key', 'Getty Images API Key', array( 'photo_assistant_Plugin', 'display_apikey_element' ), 'photo-assistant-options', "section");
+		register_setting('section', 'api_key');
 	}
 
 
@@ -190,4 +214,8 @@ class photo_assistant_Plugin {
  */
 add_action( 'plugins_loaded', array( 'photo_assistant_Plugin', 'init' ) );
 
+/**
+ * Handle the loading of the plugin settings page.
+ */
 add_action('admin_menu', array( 'photo_assistant_Plugin', 'add_photo_assistant_menu_item') );
+add_action('admin_init', array( 'photo_assistant_Plugin', 'display_photo_assistant_fields') );
