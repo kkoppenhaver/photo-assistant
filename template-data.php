@@ -15,9 +15,9 @@
  * Add content to ".backbone_modal-main article"
  */
 ?>
-<script type="text/html" id='tmpl-aut0poietic-modal-window'>
+<script type="text/html" id='tmpl-photo-assistant-modal-window'>
 	<div class="backbone_modal">
-		<a class="backbone_modal-close dashicons dashicons-no" href="#"
+		<a class="photo_assistant-close dashicons dashicons-no" href="#"
 		   title="<?php echo __( 'Close', 'photo_assistant' ); ?>"><span
 				class="screen-reader-text"><?php echo __( 'Close', 'photo_assistant' ); ?></span></a>
 
@@ -48,7 +48,7 @@
  * The Modal Backdrop
  */
 ?>
-<script type="text/html" id='tmpl-aut0poietic-modal-backdrop'>
+<script type="text/html" id='tmpl-photo-assistant-modal-backdrop'>
 	<div class="backbone_modal-backdrop">&nbsp;</div>
 </script>
 <?php
@@ -56,7 +56,7 @@
  * Base template for a navigation-bar menu item ( and the only *real* template in the file ).
  */
 ?>
-<script type="text/html" id='tmpl-aut0poietic-modal-menu-item'>
+<script type="text/html" id='tmpl-photo-assistant-modal-menu-item'>
 	<li class="nav-item"><a href="{{ data.url }}">{{ data.name }}</a></li>
 </script>
 <?php
@@ -64,6 +64,6 @@
  * A menu item separator.
  */
 ?>
-<script type="text/html" id='tmpl-aut0poietic-modal-menu-item-separator'>
+<script type="text/html" id='tmpl-photo-assistant-modal-menu-item-separator'>
 	<li class="separator">&nbsp;</li>
 </script>

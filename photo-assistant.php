@@ -92,7 +92,7 @@ class photo_assistant_Plugin {
 				'underscore',
 				'wp-util'
 			) );
-			wp_localize_script( 'photo_assistant', 'aut0poietic_backbone_modal_l10n',
+			wp_localize_script( 'photo_assistant', 'photo_assistant_l10n',
 				array(
 					'replace_message' => __( 'This is dummy content. You should add something here.', 'photo_assistant' )
 				) );
