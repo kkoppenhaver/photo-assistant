@@ -37,8 +37,8 @@ class photo_assistant_Plugin {
 	 * as well as an AJAX hook to retrieve templates.
 	 */
 	public function __construct() {
-		add_action( 'add_meta_boxes', $this->marshal( 'add_meta_box' ) );
 		add_action( 'admin_enqueue_scripts', $this->marshal( 'add_scripts' ) );
+		add_action( 'media_buttons_context', $this->marshal( 'add_pa_button') );
 		// Adding the templates to the post.php and post-new.php only as that's the only place
 		// our meta box is added in this plugin.  You can also use the wp-footer action if you need
 		// the templates globally.
@@ -58,29 +58,16 @@ class photo_assistant_Plugin {
 	}
 
 	/**
-	 * Adds a small panel to right-most column of the edit/create post interface used to open the modal dialog.
-	 */
-	public function add_meta_box() {
-		add_meta_box(
-			'photo_assistant',
-			__( 'Backbone Modal Sample', 'photo_assistant' ),
-			$this->marshal( 'metabox_content' ),
-			'post',
-			'side',
-			'core'
-		);
-	}
-
-	/**
 	 * Supplies the internal content for the panel. In this case, a simple button used as the primary target for
 	 * the backbone application.
 	 *
 	 * @param $post Post a WordPress post object
 	 */
-	public function metabox_content( $post ) {
+	public function add_pa_button( $post ) {
 		print sprintf(
-			'<input type="button" class="button button-primary " id="open-backbone_modal" value="%1$s">',
-			__( 'Open Backbone Modal', 'photo_assistant' )
+			'<a href="#" id="open-photo_assistant_modal" class="button photo-assistant" title="Photo Assistant - Find a stock photo for your post">
+    			<span class="dashicons dashicons-format-gallery"></span> %1$s</a>',
+			__( 'Photo Assistant', 'photo_assistant' )
 		);
 	}
 
