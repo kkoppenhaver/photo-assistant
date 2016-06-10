@@ -36,6 +36,14 @@ photo_assistant.modal.Application = Backbone.View.extend(
 		},
 
 		/**
+		 * Object to hold all API information
+		 */
+		api: {
+			base: 'https://api.gettyimages.com/v3/'
+			apiKey: ''
+		}
+
+		/**
 		 * Container to store our compiled templates. Not strictly necessary in such a simple example
 		 * but might be useful in a larger one.
 		 */
