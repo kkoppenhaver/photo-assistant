@@ -78,15 +78,6 @@ photo_assistant.modal.Application = Backbone.View.extend(
 				.append( this.templates.window() )
 				.append( this.templates.backdrop() );
 
-			// Save a reference to the navigation bar's unordered list and populate it with items.
-			// This is here mostly to demonstrate the use of the template class.
-			this.ui.nav = this.$( '.navigation-bar nav ul' )
-				.append( this.templates.menuItem( {url: "#one", name: "Option 1"} ) )
-				.append( this.templates.menuItem( {url: "#two", name: "Option 2"} ) )
-				.append( this.templates.menuItemSeperator() )
-				.append( this.templates.menuItem( {url: "#three", name: "Option 3"} ) );
-
-
 			// Handle any attempt to move focus out of the modal.
 			jQuery( document ).on( "focusin", this.preserveFocus );
 

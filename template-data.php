@@ -22,13 +22,8 @@
 				class="screen-reader-text"><?php echo __( 'Close', 'photo_assistant' ); ?></span></a>
 
 		<div class="backbone_modal-content">
-			<div class="navigation-bar">
-				<nav>
-					<ul></ul>
-				</nav>
-			</div>
 			<section class="backbone_modal-main" role="main">
-				<header><h1><?php echo __( 'Backbone Modal', 'photo_assistant' ); ?></h1></header>
+				<header><h1><?php echo __( 'Photo Assistant', 'photo_assistant' ); ?></h1></header>
 				<article></article>
 				<footer>
 					<div class="inner text-right">
@@ -50,14 +45,6 @@
 ?>
 <script type="text/html" id='tmpl-photo-assistant-modal-backdrop'>
 	<div class="backbone_modal-backdrop">&nbsp;</div>
-</script>
-<?php
-/**
- * Base template for a navigation-bar menu item ( and the only *real* template in the file ).
- */
-?>
-<script type="text/html" id='tmpl-photo-assistant-modal-menu-item'>
-	<li class="nav-item"><a href="{{ data.url }}">{{ data.name }}</a></li>
 </script>
 <?php
 /**

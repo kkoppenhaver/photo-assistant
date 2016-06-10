@@ -108,11 +108,6 @@
 	background-color: rgba(0, 0, 0, 0.04);
 }
 .backbone_modal-main {
-	position: absolute;
-	top: 0;
-	left: 200px;
-	right: 0;
-	bottom: 0 ;
 	z-index: 200;
 }
 .backbone_modal-main article, .backbone_modal-main header {
