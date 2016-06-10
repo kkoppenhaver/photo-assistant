@@ -50,63 +50,6 @@
 	opacity: .7;
 	z-index: 159900;
 }
-.navigation-bar {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	width: 199px;
-	z-index: 150;
-}
-.navigation-bar nav {
-	display:block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: 0;
-	padding: 16px 0;
-	border-right: 1px solid #d9d9d9;
-	box-shadow: inset -6px 0 6px -6px rgba(0,0,0,0.2);
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-.navigation-bar nav ul {
-	display:block;
-	padding: 16px;
-	margin: 0;
-	list-style: none;
-}
-.navigation-bar nav ul li{
-	padding: 0;
-	margin: 0;
-	list-style: none;
-}
-.navigation-bar nav ul li.separator {
-	height: 0;
-	margin: 12px 20px;
-	padding: 0;
-	border-top: 1px solid #dfdfdf;
-	border-bottom: 1px solid #fff;
-}
-.navigation-bar nav a {
-	display: block;
-	position: relative;
-	padding: 4px 20px;
-	margin: 0;
-	line-height: 18px;
-	font-size: 14px;
-	color: #21759b;
-	text-shadow: 0 1px 0 #fff;
-	text-decoration: none;
-}
-.navigation-bar nav a:hover ,
-.navigation-bar nav a:focus {
-	background-color: rgba(0, 0, 0, 0.04);
-}
 .backbone_modal-main {
 	z-index: 200;
 }
