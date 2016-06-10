@@ -174,13 +174,14 @@ class photo_assistant_Plugin {
 	/**
 	 * Creating Plugin Settings Page and field for API Key
 	 */
-	function photo_assistant_add_option_page(){
-		add_options_page( 'Photo Assistant', 'Photo Assistant', 'activate_plugins', 'photo-assistant', array( 'photo_assistant_Plugin', 'photo_assistant_admin_page') );
+	function photo_assistant_settings_page(){
+
 	}
 
-	function photo_assistant_admin_page(){
-		echo 'This is the page content';
+	function add_photo_assistant_menu_item() {
+		add_submenu_page("options-general.php", "Photo Assistant", "Photo Assistant", "manage_options", "photo-assistant", array( "photo_assistant_Plugin", "photo_assistant_settings_page" ) );
 	}
+
 
 }
 
@@ -189,4 +190,4 @@ class photo_assistant_Plugin {
  */
 add_action( 'plugins_loaded', array( 'photo_assistant_Plugin', 'init' ) );
 
-add_action('admin_menu', array( 'photo_assistant_Plugin', 'photo_assistant_add_option_page') );
+add_action('admin_menu', array( 'photo_assistant_Plugin', 'add_photo_assistant_menu_item') );
