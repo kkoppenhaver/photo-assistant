@@ -24,6 +24,20 @@
 		<div class="backbone_modal-content">
 			<section class="backbone_modal-main" role="main">
 				<header><h1><?php echo __( 'Photo Assistant', 'photo_assistant' ); ?></h1></header>
+				<div class="keywords">
+					<p>Keywords:</p>
+					<?php
+						global $post;
+						$keywords = photo_assistant_Plugin::get_post_keywords( $post->post_content );
+					?>
+					<ul>
+						<?php foreach ( $keywords as $key => $value ) : ?>
+							<li class="search-term">
+								<em><?php echo $value[0] ?></em>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
 				<article></article>
 				<footer>
 					<div class="inner text-right">

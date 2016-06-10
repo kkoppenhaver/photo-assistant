@@ -124,17 +124,8 @@
     visibility: visible;
 }
 
-#TB_ajaxContent {
-	width: 100% !important;
-	height: 100% !important;
-}
-
-#TB_window {
-	overflow: hidden;
-}
-
 .keywords {
-	padding-top: 40px;
+	padding: 4px 16px;
 }
 
 .keywords ul, .keywords p, .keywords li {
