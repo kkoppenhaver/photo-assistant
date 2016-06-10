@@ -1,13 +1,15 @@
 <?php
 /*
- * Plugin Name: Backbone Modal Sample
- * Description: Just a sample of how I implemented a modal similar to the Media modal using Backbone.
- * Author: Jer Brand / @aut0poietic
- * Version: 1.0.0
- * Author URI: http://irresponsibleart.com
- * Text Domain: backbone_modal
- * Domain Path: /languages/
- */
+  Plugin Name: Photo Assistant
+  Plugin URI: https://github.com/kkoppenhaver/photo-assistant
+  Description: A WordPress plugin that helps you pick the right stock photo based on the content of your post
+  Author: Keanan Koppenhaver
+  Twitter: @kkoppenhaver
+  Author URI: http://keanankoppenhaver.com
+  Version: 0.1
+  License: GPL
+  Copyright: Keanan Koppenhaver
+*/
 
 /**
  * Main plugin class, namespace [Author Handle]_[Plugin Text Domain]_ to avoid conflicts.
