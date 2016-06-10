@@ -92,10 +92,7 @@ class photo_assistant_Plugin {
 				'underscore',
 				'wp-util'
 			) );
-			wp_localize_script( 'photo_assistant', 'photo_assistant_l10n',
-				array(
-					'replace_message' => __( 'This is dummy content. You should add something here.', 'photo_assistant' )
-				) );
+
 			wp_enqueue_style( 'photo_assistant', $base . 'css/modal.css' );
 		}
 	}
