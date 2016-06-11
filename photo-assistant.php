@@ -195,15 +195,15 @@ class photo_assistant_Plugin {
 
 	function display_apikey_element() {
 		?>
-	   	<input type="text" name="api_key" id="api_key" value="<?php echo get_option('api_key'); ?>" />
+	   	<input type="text" name="photo_assistant_api_key" id="photo_assistant_api_key" value="<?php echo get_option('photo_assistant_api_key'); ?>" />
 	  <?php
 	}
 
 	function display_photo_assistant_fields() {
 		add_settings_section('section', 'API Settings', null, 'photo-assistant-options');
 
-		add_settings_field('api_key', 'Getty Images API Key', array( 'photo_assistant_Plugin', 'display_apikey_element' ), 'photo-assistant-options', "section");
-		register_setting('section', 'api_key');
+		add_settings_field('photo_assistant_api_key', 'Getty Images API Key', array( 'photo_assistant_Plugin', 'display_apikey_element' ), 'photo-assistant-options', "section");
+		register_setting('section', 'photo_assistant_api_key');
 	}
 
 
