@@ -18,22 +18,22 @@
 <script type="text/html" id='tmpl-photo-assistant-modal-window'>
 	<div class="backbone_modal">
 		<a class="photo_assistant-close dashicons dashicons-no" href="#"
-		   title="<?php echo __( 'Close', 'photo_assistant' ); ?>"><span
-				class="screen-reader-text"><?php echo __( 'Close', 'photo_assistant' ); ?></span></a>
+		   title="<?php echo esc_attr__( 'Close', 'photo_assistant' ); ?>"><span
+				class="screen-reader-text"><?php echo esc_attr__( 'Close', 'photo_assistant' ); ?></span></a>
 
 		<div class="backbone_modal-content">
 			<section class="backbone_modal-main" role="main">
-				<header><h1><?php echo __( 'Photo Assistant', 'photo_assistant' ); ?></h1></header>
+				<header><h1><?php echo esc_html__( 'Photo Assistant', 'photo_assistant' ); ?></h1></header>
 				<div class="keywords">
 					<p>Keywords:</p>
 					<?php
 						global $post;
-						$keywords = photo_assistant_Plugin::get_post_keywords( $post->post_content );
+						$keywords = PhotoAssistantPlugin::get_post_keywords( $post->post_content );
 					?>
 					<ul>
 						<?php foreach ( $keywords as $key => $value ) : ?>
 							<li class="search-term">
-								<em><?php echo $value[0] ?></em>
+								<em><?php echo esc_html( $value[0] ) ?></em>
 							</li>
 						<?php endforeach; ?>
 					</ul>
@@ -42,9 +42,9 @@
 				<footer>
 					<div class="inner text-right">
 						<button id="btn-cancel"
-						        class="button button-large"><?php echo __( 'Cancel', 'photo_assistant' ); ?></button>
+						        class="button button-large"><?php echo esc_html__( 'Cancel', 'photo_assistant' ); ?></button>
 						<button id="btn-ok"
-						        class="button button-primary button-large"><?php echo __( 'Save &amp; Continue', 'photo_assistant' ); ?></button>
+						        class="button button-primary button-large"><?php echo esc_html__( 'Save &amp; Continue', 'photo_assistant' ); ?></button>
 					</div>
 				</footer>
 			</section>
