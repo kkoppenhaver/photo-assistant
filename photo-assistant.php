@@ -94,6 +94,12 @@ class photo_assistant_Plugin {
 			) );
 
 			wp_enqueue_style( 'photo_assistant', $base . 'css/modal.css' );
+
+			wp_localize_script( 'photo_assistant', 'photo_assistant_l10n',
+ 				array(
+ 					'api_key' => get_option( 'photo_assistant_api_key' )
+ 				) 
+ 			);
 		}
 	}
 
