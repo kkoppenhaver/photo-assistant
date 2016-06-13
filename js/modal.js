@@ -95,6 +95,18 @@ photo_assistant.modal.Application = Backbone.View.extend(
  				}	
  			}
 
+ 			// Set up the necessary AJAX Headers
+ 			jQuery.ajaxSetup({
+    		"headers" : { "Api-Key":  photo_assistant_l10n.api_key}
+			});
+
+ 			// Set the first keyword to active
+ 			this.ui.content = this.$('.keywords li').first().addClass('active');
+
+ 			// Load in the photos for that keyword
+ 			var search_term = this.$('.keywords li.active').text().trim()
+ 			this.imageSearch( search_term, photo_assistant_l10n.api_key )
+
 			// Handle any attempt to move focus out of the modal.
 			jQuery( document ).on( "focusin", this.preserveFocus );
 
@@ -152,6 +164,27 @@ photo_assistant.modal.Application = Backbone.View.extend(
 		doNothing: function ( e ) {
 			"use strict";
 			e.preventDefault();
+		},
+
+		/**
+		 * Calls the Getty Images search API and returns images
+		 * @param search_term {string} The term for which images should be retrieved
+		 */
+		imageSearch: function ( search_term ) {
+			"use strict";
+
+			var API_BASE = 'https://api.gettyimages.com/v3/';
+			var search_url = API_BASE + 'search/images?phrase=' + search_term;
+
+			jQuery.ajax({
+				url: search_url, 
+				success: function(response){
+		  		console.log(response);
+
+		  		// TO-DO Append each of the images to the images container
+	    	}
+    	});
+
 		}
 
 	} );
