@@ -194,6 +194,12 @@ photo_assistant.modal.Application = Backbone.View.extend(
 		 switchSearchTerm: function ( e ) {
 			"use strict";
 
+			//Clear the photos currently in the container
+			jQuery('.pa-thumbnails > img').remove();	
+
+			//Run the Ajax Request
+			this.imageSearch(jQuery(e.target).text());
+
 			// Remove active class from all keywords
  			jQuery('.keywords li').removeClass('active');
 
