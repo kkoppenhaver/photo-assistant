@@ -102,26 +102,25 @@
 	padding-top: 2px !important;
 }
 
-.popup-inner > .images {
+.pa-thumbnails {
 	padding-bottom: 50px;
 }
 
-.popup-inner > .images > img {
+.pa-thumbnails > img {
 	margin: 10px;
-	width: 21%;
 }
 
-.popup-inner > .images > img.selected {
+.pa-thumbnails > img.selected {
 	border: 5px solid #0073aa;
 	box-sizing: border-box;
 }
 
-.popup-inner > .images > .spinner {
+.pa-thumbnails > .spinner {
 	position: absolute;
-    z-index: 20000;
-    left: 50%;
-    margin-left: -10px;
-    visibility: visible;
+  z-index: 20000;
+  left: 50%;
+  margin-left: -10px;
+  visibility: visible;
 }
 
 .keywords {
@@ -155,4 +154,3 @@
 	max-width: 150px;
 	text-align: center;
 }
-

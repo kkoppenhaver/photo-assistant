@@ -179,10 +179,22 @@ photo_assistant.modal.Application = Backbone.View.extend(
 
 			jQuery.ajax({
 				url: search_url, 
-				success: function(response){
-		  		console.log(response);
+				success: function(response){		
 
-		  		// TO-DO Append each of the images to the images container
+		  		// Loop through each of the returned images
+		  		response.images.forEach(function(el, index, array){
+						// Append each image to the thumbnails container
+						jQuery('.pa-thumbnails').append(
+							jQuery('<img>', {
+								id:  el.id,
+								src: el.display_sizes[0].uri
+							})
+						);
+
+						// Deactivate the spinner
+						jQuery('.pa-thumbnails > .spinner').css('display', 'none');
+
+					});
 	    	}
     	});
 		},
@@ -196,6 +208,9 @@ photo_assistant.modal.Application = Backbone.View.extend(
 
 			//Clear the photos currently in the container
 			jQuery('.pa-thumbnails > img').remove();	
+
+			// Activate the spinner
+			jQuery('.pa-thumbnails > .spinner').css('display', 'block');
 
 			//Run the Ajax Request
 			this.imageSearch(jQuery(e.target).text());

@@ -39,15 +39,7 @@
 					</ul>
 				</div>
 				<div class="pa-thumbnails">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=300%C3%97150&w=300&h=150" alt="">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=300%C3%97150&w=300&h=150" alt="">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=300%C3%97150&w=300&h=150" alt="">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=300%C3%97150&w=300&h=150" alt="">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=300%C3%97150&w=300&h=150" alt="">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=300%C3%97150&w=300&h=150" alt="">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=300%C3%97150&w=300&h=150" alt="">
-					<img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=300%C3%97150&w=300&h=150" alt="">
-					
+					<div class="spinner"></div>
 				</div>
 				<footer>
 					<div class="inner text-right">
