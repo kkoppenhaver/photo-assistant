@@ -24,7 +24,8 @@ photo_assistant.modal.Application = Backbone.View.extend(
 			"click .photo_assistant-close": "closeModal",
 			"click #btn-cancel": "closeModal",
 			"click #btn-ok": "saveModal",
-			"click .navigation-bar a": "doNothing"
+			"click .navigation-bar a": "doNothing",
+			"click .search-term": "switchSearchTerm"
 		},
 
 		/**
@@ -184,7 +185,21 @@ photo_assistant.modal.Application = Backbone.View.extend(
 		  		// TO-DO Append each of the images to the images container
 	    	}
     	});
+		},
 
+		/**
+		 * Handles the switching of the search term
+		 * @param e {object} A jQuery-normalized event object.
+		 */
+		 switchSearchTerm: function ( e ) {
+			"use strict";
+
+			// Remove active class from all keywords
+ 			jQuery('.keywords li').removeClass('active');
+
+ 			// Add active class to clicked keyword
+ 			var $searchTerm = jQuery(e.target).parent();
+ 			$searchTerm.addClass('active');
 		}
 
 	} );
