@@ -22,8 +22,8 @@ photo_assistant.modal.Application = Backbone.View.extend(
 		id: "photo_assistant_dialog",
 		events: {
 			"click .photo_assistant-close": "closeModal",
-			"click #btn-cancel": "closeModal",
-			"click #btn-ok": "saveModal",
+			"click #btn-feat-img": "setFeaturedImage",
+			"click #btn-post-img": "setPostImage",
 			"click .navigation-bar a": "doNothing",
 			"click .search-term": "switchSearchTerm"
 		},
@@ -221,6 +221,24 @@ photo_assistant.modal.Application = Backbone.View.extend(
  			// Add active class to clicked keyword
  			var $searchTerm = jQuery(e.target).parent();
  			$searchTerm.addClass('active');
+		},
+
+		/**
+		 * Handles the switching of the search term
+		 * @param e {object} A jQuery-normalized event object.
+		 */
+		setFeaturedImage: function( e ){
+			"use strict";
+
+			alert('featured Image');
+			this.closeModal(e);
+		},
+
+		setPostImage: function( e ){
+			"use strict";
+
+			alert('post Image');
+			this.closeModal(e);
 		}
 
 	} );

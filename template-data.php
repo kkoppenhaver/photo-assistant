@@ -43,10 +43,10 @@
 				</div>
 				<footer>
 					<div class="inner text-right">
-						<button id="btn-cancel"
-						        class="button button-large"><?php echo esc_html__( 'Cancel', 'photo_assistant' ); ?></button>
-						<button id="btn-ok"
-						        class="button button-primary button-large"><?php echo esc_html__( 'Save &amp; Continue', 'photo_assistant' ); ?></button>
+						<button id="btn-post-img"
+						        class="button button-primary button-large"><?php echo esc_html__( 'Embed Image', 'photo_assistant' ); ?></button>
+						<button id="btn-feat-img"
+						        class="button button-primary button-large"><?php echo esc_html__( 'Set Featured Image', 'photo_assistant' ); ?></button>
 					</div>
 				</footer>
 			</section>
