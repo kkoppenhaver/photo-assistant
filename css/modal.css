@@ -55,6 +55,7 @@
 }
 .backbone_modal-main article, .backbone_modal-main header {
 	display: block;
+	height: 50px;
 	position: relative;
 	padding: 4px 16px;
 }
@@ -75,6 +76,7 @@
 	border: 0 solid #dfdfdf;
 	border-width: 1px 0 0 0;
 	box-shadow: 0 -4px 4px -4px rgba(0,0,0,0.1);
+	background-color: white;
 }
 .backbone_modal-main footer .inner {
 	padding: 0 16px;
@@ -103,7 +105,8 @@
 }
 
 .pa-thumbnails {
-	padding-bottom: 50px;
+	position: relative;
+	overflow: scroll;
 }
 
 .pa-thumbnails > img {

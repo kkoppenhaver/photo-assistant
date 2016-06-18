@@ -106,7 +106,7 @@ photo_assistant.modal.Application = Backbone.View.extend(
 
  			// Load in the photos for that keyword
  			var search_term = this.$('.keywords li.active').text().trim()
- 			this.imageSearch( search_term, photo_assistant_l10n.api_key )
+ 			this.imageSearch( search_term, photo_assistant_l10n.api_key );
 
 			// Handle any attempt to move focus out of the modal.
 			jQuery( document ).on( "focusin", this.preserveFocus );
@@ -119,6 +119,16 @@ photo_assistant.modal.Application = Backbone.View.extend(
 			// Set focus on the modal to prevent accidental actions in the underlying page
 			// Not strictly necessary, but nice to do.
 			this.$el.focus();
+
+			// Make the thumbnails container the same height as the modal.
+			// This allows it to scroll properly.
+			var modalHeight = jQuery(this.$el).find('.backbone_modal-content').outerHeight();
+			var headerHeight = jQuery(this.$el).find('header').outerHeight();
+			var keywordsHeight = jQuery(this.$el).find('.keywords').outerHeight();
+			var footerHeight = jQuery(this.$el).find('footer').outerHeight();
+
+			var thumbnailsHeight = modalHeight -  headerHeight - keywordsHeight - footerHeight;
+			jQuery('.pa-thumbnails').height(thumbnailsHeight);
 		},
 
 		/**
