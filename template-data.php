@@ -25,7 +25,7 @@
 			<section class="backbone_modal-main" role="main">
 				<header><h1><?php echo esc_html__( 'Photo Assistant', 'photo_assistant' ); ?></h1></header>
 				<div class="keywords">
-					<p>Photo Keywords:</p>
+					<p>Keywords:</p>
 					<?php
 						global $post;
 						$keywords = PhotoAssistantPlugin::get_post_keywords( $post->post_content );
