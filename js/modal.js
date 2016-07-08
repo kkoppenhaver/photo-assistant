@@ -265,18 +265,26 @@ photo_assistant.modal.Application = Backbone.View.extend(
 		},
 
 		selectImage: function( e ){
-			// Remove the select from all other images
-			jQuery('.pa-thumbnails > img').removeClass('selected');
+			if(jQuery(e.target).hasClass('selected')){
+				// Remove the select from all other images
+				jQuery('.pa-thumbnails > img').removeClass('selected');
 
-			// Select our current image
-			jQuery(e.target).addClass('selected');
+				jQuery('.sidebar-inner').css('visibility', 'hidden');
+			}
+			else {
+				// Remove the select from all other images
+				jQuery('.pa-thumbnails > img').removeClass('selected');
 
-			// Update the sidebar with details about the currently selected image
-			jQuery('.sidebar-inner img').attr('src', jQuery(e.target).attr('src'));
-			jQuery('.sidebar-inner .img-title').text(jQuery(e.target).data('title'));
-			jQuery('.sidebar-inner .img-caption').text(jQuery(e.target).data('caption'));
+				// Select our current image
+				jQuery(e.target).addClass('selected');
 
+				// Update the sidebar with details about the currently selected image
+				jQuery('.sidebar-inner img').attr('src', jQuery(e.target).attr('src'));
+				jQuery('.sidebar-inner .img-title').text(jQuery(e.target).data('title'));
+				jQuery('.sidebar-inner .img-caption').text(jQuery(e.target).data('caption'));
 
+				jQuery('.sidebar-inner').css('visibility', 'visible');
+			}
 		}
 
 	} );
