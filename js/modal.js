@@ -25,7 +25,8 @@ photo_assistant.modal.Application = Backbone.View.extend(
 			"click #btn-feat-img": "setFeaturedImage",
 			"click #btn-post-img": "setPostImage",
 			"click .navigation-bar a": "doNothing",
-			"click .search-term": "switchSearchTerm"
+			"click .search-term": "switchSearchTerm",
+			"click .pa-thumbnails > img": "selectImage"
 		},
 
 		/**
@@ -260,6 +261,14 @@ photo_assistant.modal.Application = Backbone.View.extend(
 
 			alert('post Image');
 			this.closeModal(e);
+		},
+
+		selectImage: function( e ){
+			// Remove the select from all other images
+			jQuery('.pa-thumbnails > img').removeClass('selected');
+
+			// Select our current image
+			jQuery(e.target).addClass('selected');
 		}
 
 	} );
