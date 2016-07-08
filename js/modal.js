@@ -120,11 +120,13 @@ photo_assistant.modal.Application = Backbone.View.extend(
 			// Not strictly necessary, but nice to do.
 			this.$el.focus();
 
-			// Set up the event so that the modal closes when the escape key is pressed
+			// Because "this" will be a different context as soon as we're inside the keyup function
 			var pa = this;
+
+			// Set up the event so that the modal closes when the escape key is pressed
 			jQuery( document ).on( "keyup", function(e){
 				if (e.keyCode === 27){
-					pa.closeModal(e);
+					pa.closeModal( e );
 				} 
 			} );
 
