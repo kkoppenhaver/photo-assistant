@@ -202,7 +202,7 @@ photo_assistant.modal.Application = Backbone.View.extend(
 			jQuery.ajax({
 				url: search_url, 
 				success: function(response){		
-
+					console.log(response.images);
 		  		// Loop through each of the returned images
 		  		response.images.forEach(function(el, index, array){
 						// Append each image to the thumbnails container
