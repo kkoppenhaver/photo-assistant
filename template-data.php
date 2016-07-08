@@ -41,6 +41,9 @@
 				<div class="pa-thumbnails">
 					<div class="spinner"></div>
 				</div>
+				<div class="pa-sidebar">
+					Here is a sidebar.
+				</div>
 				<footer>
 					<div class="inner text-right">
 						<button id="btn-post-img"

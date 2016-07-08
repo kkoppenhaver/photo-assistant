@@ -130,7 +130,7 @@ photo_assistant.modal.Application = Backbone.View.extend(
 				} 
 			} );
 
-			// Make the thumbnails container the same height as the modal.
+			// Make the thumbnails container and the sidebar the same height as the modal.
 			// This allows it to scroll properly.
 			var modalHeight = jQuery(this.$el).find('.backbone_modal-content').outerHeight();
 			var headerHeight = jQuery(this.$el).find('header').outerHeight();
@@ -139,6 +139,7 @@ photo_assistant.modal.Application = Backbone.View.extend(
 
 			var thumbnailsHeight = modalHeight -  headerHeight - keywordsHeight - footerHeight;
 			jQuery('.pa-thumbnails').height(thumbnailsHeight);
+			jQuery('.pa-sidebar').height(thumbnailsHeight);
 		},
 
 		/**

@@ -105,8 +105,11 @@
 }
 
 .pa-thumbnails {
+	display: inline-block;
+	float: left;
 	position: relative;
 	overflow: scroll;
+	width: 80%;
 }
 
 .pa-thumbnails > img {
@@ -127,6 +130,7 @@
 }
 
 .keywords {
+	border-bottom: 1px solid #ddd;
 	padding: 4px 16px;
 }
 
@@ -177,4 +181,14 @@
 	  top: 10px;
     right: 10px;
     z-index: 10;
+}
+
+.pa-sidebar {
+	background-color: #f3f3f3;
+	border-left: 1px solid #ddd;
+  box-sizing: border-box;
+  display: inline-block;
+  float: left;
+	height: 100%;
+	width: 20%;
 }
