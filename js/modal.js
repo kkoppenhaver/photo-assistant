@@ -120,6 +120,14 @@ photo_assistant.modal.Application = Backbone.View.extend(
 			// Not strictly necessary, but nice to do.
 			this.$el.focus();
 
+			// Set up the event so that the modal closes when the escape key is pressed
+			var pa = this;
+			jQuery( document ).on( "keyup", function(e){
+				if (e.keyCode === 27){
+					pa.closeModal(e);
+				} 
+			} );
+
 			// Make the thumbnails container the same height as the modal.
 			// This allows it to scroll properly.
 			var modalHeight = jQuery(this.$el).find('.backbone_modal-content').outerHeight();
