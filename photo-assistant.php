@@ -93,7 +93,7 @@ class PhotoAssistantPlugin {
 				'wp-util',
 			) );
 
-			wp_enqueue_style( 'photo_assistant', $base . 'css/modal.css' );
+			wp_enqueue_style( 'photo_assistant', $base . 'css/modal.css', array( 'dashicons' ) );
 
 			wp_localize_script( 'photo_assistant', 'photo_assistant_l10n',
 				array(

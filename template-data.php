@@ -17,9 +17,9 @@
 ?>
 <script type="text/html" id='tmpl-photo-assistant-modal-window'>
 	<div class="backbone_modal">
-		<a class="photo_assistant-close dashicons dashicons-no" href="#"
+		<a class="photo_assistant-close" href="#"
 		   title="<?php echo esc_attr__( 'Close', 'photo_assistant' ); ?>"><span
-				class="screen-reader-text"><?php echo esc_attr__( 'Close', 'photo_assistant' ); ?></span></a>
+				class="screen-reader-text">Close</span></a>
 
 		<div class="backbone_modal-content">
 			<section class="backbone_modal-main" role="main">
