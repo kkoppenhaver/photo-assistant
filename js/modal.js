@@ -202,14 +202,15 @@ photo_assistant.modal.Application = Backbone.View.extend(
 			jQuery.ajax({
 				url: search_url, 
 				success: function(response){		
-					console.log(response.images);
 		  		// Loop through each of the returned images
 		  		response.images.forEach(function(el, index, array){
 						// Append each image to the thumbnails container
 						jQuery('.pa-thumbnails').append(
 							jQuery('<img>', {
 								id:  el.id,
-								src: el.display_sizes[0].uri
+								src: el.display_sizes[0].uri,
+								'data-title': el.title,
+								'data-caption': el.caption
 							})
 						);
 
@@ -269,6 +270,13 @@ photo_assistant.modal.Application = Backbone.View.extend(
 
 			// Select our current image
 			jQuery(e.target).addClass('selected');
+
+			// Update the sidebar with details about the currently selected image
+			jQuery('.sidebar-inner img').attr('src', jQuery(e.target).attr('src'));
+			jQuery('.sidebar-inner .img-title').text(jQuery(e.target).data('title'));
+			jQuery('.sidebar-inner .img-caption').text(jQuery(e.target).data('caption'));
+
+
 		}
 
 	} );
