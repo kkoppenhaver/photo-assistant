@@ -45,10 +45,10 @@
 					<div class="sidebar-inner">
 						<h4>ATTACHMENT DETAILS</h4>
 
-						<img src="http://cache3.asset-cache.net/xt/473267160.jpg?v=1&amp;g=fs2|0|editorial194|67|160&amp;s=1&amp;b=Ng==" alt="">
-						<div class="img-title">Uber Drivers Present Petition To Transport For London</div>
+						<img src="" alt="">
+						<div class="img-title"></div>
 
-						<div class="img-caption">LONDON, ENGLAND - DECEMBER 22:  An Uber driver poses for a photograph in an Uber t-shirt and holding a smart phone displaying the Uber app after delivering petitions to the Transport for London headquarters on December 22, 2015 in London, England. The Uber drivers formally handed in the petition, signed by over 205,000 people, to oppose proposals such as introducing minimum 5 minute waiting times.  (Photo by Carl Court/Getty Images)</div>
+						<div class="img-caption"></div>
 					</div>
 				</div>
 				<footer>
