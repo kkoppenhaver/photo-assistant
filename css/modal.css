@@ -216,3 +216,11 @@
 	margin-top: 10px;
 	max-width: 400px;
 }
+
+#no-api-key {
+	background-color: #fcc;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}

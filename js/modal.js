@@ -199,27 +199,44 @@ photo_assistant.modal.Application = Backbone.View.extend(
 			var API_BASE = 'https://api.gettyimages.com/v3/';
 			var search_url = API_BASE + 'search/images?phrase=' + search_term;
 
-			jQuery.ajax({
-				url: search_url, 
-				success: function(response){		
-		  		// Loop through each of the returned images
-		  		response.images.forEach(function(el, index, array){
-						// Append each image to the thumbnails container
-						jQuery('.pa-thumbnails').append(
-							jQuery('<img>', {
-								id:  el.id,
-								src: el.display_sizes[0].uri,
-								'data-title': el.title,
-								'data-caption': el.caption
-							})
-						);
+			if( !photo_assistant_l10n.api_key ){
+				// Wait for .pa-thumbnails to be available
+				setTimeout(function(){
+					jQuery('.pa-thumbnails').append(
+						jQuery('<div>', {
+							id:  'no-api-key'
+						})
+					);
 
-						// Deactivate the spinner
-						jQuery('.pa-thumbnails > .spinner').css('display', 'none');
+					jQuery('#no-api-key').html('Please enter a valid Getty Images API Key on the <a href="/wp-admin/options-general.php?page=photo-assistant">plugin settings</a> page.');
 
-					});
-	    	}
-    	});
+					// Deactivate the spinner
+					jQuery('.pa-thumbnails > .spinner').css('display', 'none');
+				}, 200)
+			}
+			else {
+				jQuery.ajax({
+					url: search_url, 
+					success: function(response){		
+			  		// Loop through each of the returned images
+			  		response.images.forEach(function(el, index, array){
+							// Append each image to the thumbnails container
+							jQuery('.pa-thumbnails').append(
+								jQuery('<img>', {
+									id:  el.id,
+									src: el.display_sizes[0].uri,
+									'data-title': el.title,
+									'data-caption': el.caption
+								})
+							);
+
+							// Deactivate the spinner
+							jQuery('.pa-thumbnails > .spinner').css('display', 'none');
+
+						});
+		    	}
+	    	});
+			}
 		},
 
 		/**
