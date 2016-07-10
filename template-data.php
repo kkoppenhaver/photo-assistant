@@ -54,9 +54,9 @@
 				<footer>
 					<div class="inner text-right">
 						<button id="btn-post-img"
-						        class="button button-primary button-large"><?php echo esc_html__( 'Embed Image', 'photo_assistant' ); ?></button>
+						        class="button button-primary button-large" disabled="true"><?php echo esc_html__( 'Embed Image', 'photo_assistant' ); ?></button>
 						<button id="btn-feat-img"
-						        class="button button-primary button-large"><?php echo esc_html__( 'Set Featured Image', 'photo_assistant' ); ?></button>
+						        class="button button-primary button-large" disabled="true"><?php echo esc_html__( 'Set Featured Image', 'photo_assistant' ); ?></button>
 					</div>
 				</footer>
 			</section>

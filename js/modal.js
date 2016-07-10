@@ -287,6 +287,9 @@ photo_assistant.modal.Application = Backbone.View.extend(
 				jQuery('.pa-thumbnails > img').removeClass('selected');
 
 				jQuery('.sidebar-inner').css('visibility', 'hidden');
+
+				jQuery('#btn-post-img').prop('disabled', true);
+				jQuery('#btn-feat-img').prop('disabled', true);
 			}
 			else {
 				// Remove the select from all other images
@@ -301,6 +304,9 @@ photo_assistant.modal.Application = Backbone.View.extend(
 				jQuery('.sidebar-inner .img-caption').text(jQuery(e.target).data('caption'));
 
 				jQuery('.sidebar-inner').css('visibility', 'visible');
+
+				jQuery('#btn-post-img').prop('disabled', false);
+				jQuery('#btn-feat-img').prop('disabled', false);
 			}
 		}
 
