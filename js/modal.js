@@ -24,7 +24,6 @@ photo_assistant.modal.Application = Backbone.View.extend(
 			"click .photo_assistant-close": "closeModal",
 			"click #btn-feat-img": "setFeaturedImage",
 			"click #btn-post-img": "setPostImage",
-			"click .navigation-bar a": "doNothing",
 			"click .search-term": "switchSearchTerm",
 			"click .pa-thumbnails > img": "selectImage"
 		},
@@ -57,7 +56,7 @@ photo_assistant.modal.Application = Backbone.View.extend(
 		initialize: function () {
 			"use strict";
 
-			_.bindAll( this, 'render', 'preserveFocus', 'closeModal', 'saveModal', 'doNothing' );
+			_.bindAll( this, 'render', 'preserveFocus', 'closeModal' );
 			this.initialize_templates();
 			this.render();
 		},
@@ -167,26 +166,6 @@ photo_assistant.modal.Application = Backbone.View.extend(
 			jQuery( "body" ).css( {"overflow": "auto"} );
 			this.remove();
 			photo_assistant.modal.__instance = undefined;
-		},
-
-		/**
-		 * Responds to the btn-ok.click event
-		 * @param e {object} A jQuery-normalized event object.
-		 * @todo You should make this your own.
-		 */
-		saveModal: function ( e ) {
-			"use strict";
-			this.closeModal( e );
-		},
-
-		/**
-		 * Ensures that events do nothing.
-		 * @param e {object} A jQuery-normalized event object.
-		 * @todo You should probably delete this and add your own handlers.
-		 */
-		doNothing: function ( e ) {
-			"use strict";
-			e.preventDefault();
 		},
 
 		/**
