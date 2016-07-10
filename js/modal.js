@@ -256,7 +256,16 @@ photo_assistant.modal.Application = Backbone.View.extend(
 		setPostImage: function( e ){
 			"use strict";
 
-			alert('post Image');
+			// Get the first instance of TinyMCE
+			var ed = tinyMCE.get()[0];
+
+			var range = ed.selection.getRng();   
+
+			var newNode = ed.getDoc().createElement ( 'img' );
+
+			newNode.src= jQuery('.pa-thumbnails img.selected').attr('src');
+			range.insertNode(newNode);
+
 			this.closeModal(e);
 		},
 
