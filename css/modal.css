@@ -109,7 +109,7 @@
 	float: left;
 	position: relative;
 	overflow: scroll;
-	width: 80%;
+	width: 70%;
 }
 
 .pa-thumbnails > img {
@@ -189,12 +189,13 @@
   box-sizing: border-box;
   display: inline-block;
   float: left;
-	height: 100%;
-	width: 20%;
+  overflow: scroll;
+	width: 30%;
 }
 
 .sidebar-inner {
 	padding-left: 20px;
+	padding-right: 20px;
 	visibility: hidden;
 }
 
@@ -213,5 +214,5 @@
 	font-size: 12px;
 	line-height: 24px;
 	margin-top: 10px;
-	max-width: 75%;
+	max-width: 400px;
 }
